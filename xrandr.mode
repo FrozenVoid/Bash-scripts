@@ -1,4 +1,7 @@
 # 70hz mode for lower res setup.
+alias resetdisplay='xrandr --output VGA-1  --auto --scale 1x1 --rotate normal --reflect normal'
+
+
 #xrandr --output VGA-1 --scale 1x1
 #1280x1024 from cvt cvt 1280 1024 70.2
 
