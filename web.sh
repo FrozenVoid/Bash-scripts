@@ -4,6 +4,7 @@ alias webload='wget -O - -o /dev/null '
 alias youall='youtube-dl  '
 alias youvid='youtube-dl -f bestvideo'
 alias youaud='youtube-dl -f bestaudio '
+alias quakes='wget -O - -o /dev/null "https://www.emsc-csem.org/service/rss/rss.php?typ=emsc&magmin=5" | webreadq '
 
 function w(){
 webload "$1" |  webread
