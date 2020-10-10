@@ -1,0 +1,13 @@
+# 70hz mode for lower res setup.
+#xrandr --output VGA-1 --scale 1x1
+#1280x1024 from cvt cvt 1280 1024 70.2
+
+xrandr --newmode  "1280x1024_70.20"  129.50  1280 1368 1504 1728  1024 1027 1034 1069 -hsync +vsync
+
+xrandr --addmode VGA-1 1280x1024_70.20
+xrandr --output VGA-1 --scale 1.4142135623730950488x1
+xrandr --output VGA-1 --mode 1280x1024_70.20
+xrandr --output VGA-1 --gamma 1.0:1.0:1.0 --brightness 0.75
+
+#xrandr --output VGA-1 --scale 1x0.70806884765625
+#xrandr --output VGA-1 --scale 1.0x0.98765432098765432099
