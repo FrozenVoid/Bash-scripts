@@ -3,6 +3,7 @@ alias net='sudo watch ss -tonp'
 alias netstat='ss'
 alias disktree='ncdu'
 alias edit='featherpad'
+alias temps='sensors'
 alias diff="sync&&git diff --patch --patience --diff-filter=M --ignore-all-space  --no-index --word-diff=color  --color=always -b "
 alias stack="sudo perf top -g"
 alias vars='printenv'
