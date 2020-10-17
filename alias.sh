@@ -8,7 +8,7 @@ alias diff="sync&&git diff --patch --patience --diff-filter=M --ignore-all-space
 alias stack="sudo perf top -g"
 alias vars='printenv'
 alias cls='reset'
-
+alias procs='sudo ps -aux'
 alias up='sudo apt-get install --only-upgrade '
 alias strings='strings --all'
 alias rem='sudo apt purge'
@@ -17,7 +17,6 @@ alias asm='objdump -SCl -Mintel'
 alias ed='mousepad'
 alias lock='echo "screen lock ON:to disable type pass+enter";xtrlock'
 alias io='sudo iotop -a'
-alias ed='mousepad'
 alias shut='sudo shutdown -h now'
 alias reb='sudo shutdown -r now'
 alias where='locate'
