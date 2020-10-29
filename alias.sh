@@ -20,6 +20,7 @@ alias io='sudo iotop -a'
 alias shut='sudo shutdown -h now'
 alias reb='sudo shutdown -r now'
 alias where='locate'
+alias repocopy='git clone --recursive '
 function bashrc(){
 ed ~/.bashrc  
 wait
