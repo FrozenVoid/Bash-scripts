@@ -27,3 +27,23 @@ wind_dir=(N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW N)
 echo "${wind_dir[$(calc "int($1/22.5)")]}"
 }   
 
+function extens(){
+bname=$(basename -- "$1")
+echo ${bname##*.}
+}
+
+function fname(){
+bname=$(basename -- "$1")
+echo ${bname%.*}
+}
+
+function casm(){
+gcc -Ofast -march=native -fverbose-asm -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math "$1"  -S
+}
+
+
+function c(){
+bname=$(fname "$1")
+
+gcc -Ofast -march=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math "$1" -o$bname
+}
