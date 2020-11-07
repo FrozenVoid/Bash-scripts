@@ -38,7 +38,7 @@ echo ${bname%.*}
 }
 
 function casm(){
-gcc -Ofast -march=native -fverbose-asm -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math "$1"  -S
+gcc -Ofast -march=native -fverbose-asm  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -S $*  
 }
 
 
