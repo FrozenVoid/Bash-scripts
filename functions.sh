@@ -43,7 +43,8 @@ gcc -Ofast -march=native -fverbose-asm -pipe -Wall -fno-exceptions  -fwhole-prog
 
 
 function c(){
+curname=$1
 bname=$(fname "$1")
-
-gcc -Ofast -march=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math "$1" -o$bname
+shift
+gcc -Ofast -march=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math $curname -o$bname $*
 }
