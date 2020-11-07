@@ -11,7 +11,7 @@ webload "$1" |  webread
 }
 function wsearch(){
 queryddg="$@"
-webload "https://duckduckgo.com/html/?q=$queryddg" |  webread
+webload "https://lite.duckduckgo.com/lite/?q=$queryddg" |  webread
 }
 function wmedia(){
 feh "$1"
