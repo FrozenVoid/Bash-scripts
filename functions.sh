@@ -38,7 +38,7 @@ echo ${bname%.*}
 }
 
 function casm(){
-gcc -Ofast -march=native -fverbose-asm  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -S $*  
+gcc -Ofast -march=native -mtune=native  -fverbose-asm  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -S $*  
 }
 
 
@@ -46,5 +46,5 @@ function c(){
 curname=$1
 bname=$(fname "$1")
 shift
-gcc -Ofast -march=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math $curname -o$bname $*
+gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math $curname -o$bname $*
 }
