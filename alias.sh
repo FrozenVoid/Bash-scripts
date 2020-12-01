@@ -6,6 +6,7 @@ alias edit='featherpad'
 alias temps='sensors'
 alias diff="sync&&git diff --patch --patience --diff-filter=M --ignore-all-space  --no-index --word-diff=color  --color=always -b "
 alias stack="sudo perf top -g"
+alias trace='strace -C -S time '
 alias vars='printenv'
 alias cls='reset'
 alias procs='sudo ps -aux'
