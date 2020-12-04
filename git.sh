@@ -1,11 +1,13 @@
 #cloneuser github_name
 function cloneuser(){
-curl -s https://api.github.com/users/$1/repos?per_page=200 | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone --recursive
+curl -s https://api.github.com/users/$1/repos?per_page=200 | grep \"clone_url\" | awk '{print $2}' | sed -e 's/"//g' -e 's/,//g' | xargs -n1 git clone --recursive --verbose
+
 }
 
 #uprepos //current directory scan
 function uprepos(){
-find . -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull --recurse-submodules
+find . -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull --recurse-submodules --verbose
+
 }
 
 
