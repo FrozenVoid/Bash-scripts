@@ -5,7 +5,6 @@ alias disktree='ncdu'
 alias imgview='feh -FZzr '
 alias edit='featherpad'
 alias temps='sensors'
-alias diff="sync&&git diff --patch --patience --diff-filter=M --ignore-all-space  --no-index --word-diff=color  --color=always -b "
 alias stack="sudo perf top -g"
 alias trace='strace -C -S time '
 alias vars='printenv'
@@ -22,9 +21,4 @@ alias io='sudo iotop -a'
 alias shut='sudo shutdown -h now'
 alias reb='sudo shutdown -r now'
 alias where='locate'
-alias repocopy='git clone --recursive '
-function bashrc(){
-ed ~/.bashrc  
-wait
-source ~/.bashrc
-}
+
