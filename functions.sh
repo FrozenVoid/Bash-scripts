@@ -12,7 +12,7 @@ gpgv2  $1.sig $1
 }
 
 function renext(){
-for f in *.$1; do 
+for f in *.$1; do
 mv -- "$f" "${f%.$1}.$2"
 done
 }
@@ -25,7 +25,7 @@ sudo chmod 777 $1
 function wind(){
 wind_dir=(N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW N)
 echo "${wind_dir[$(calc "int($1/22.5)")]}"
-}   
+}
 
 function extens(){
 bname=$(basename -- "$1")
@@ -38,7 +38,7 @@ echo ${bname%.*}
 }
 
 function casm(){
-gcc -Ofast -march=native -mtune=native  -fverbose-asm  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  -S $*  
+gcc -Ofast -march=native -mtune=native  -fverbose-asm  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  -S $*
 }
 
 
@@ -47,4 +47,10 @@ curname=$1
 bname=$(fname "$1")
 shift
 gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  $curname -o$bname $*
+}
+
+function bashrc(){
+ed ~/.bashrc
+wait
+source ~/.bashrc
 }
