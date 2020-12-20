@@ -49,6 +49,16 @@ shift
 gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  $curname -o$bname $*
 }
 
+
+function f(){
+curname=$1
+bname=$(fname "$1")
+shift
+gfortran -fopenacc -frecursive -ffast-math -cpp -fmax-errors=3 -fexternal-blas -static-libgfortran -flto   -Wextra -Wsurprising -fdefault-integer-8 -fdefault-real-10 -fdefault-double-8 -ffree-line-length-none -fmax-identifier-length=63 -fall-intrinsics -fbackslash -fimplicit-none  -O3 -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  $curname -o$bname $*
+}
+
+
+
 function bashrc(){
 ed ~/.bashrc
 wait
