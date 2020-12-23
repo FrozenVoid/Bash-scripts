@@ -50,7 +50,7 @@ gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-pro
 }
 
 
-function f(){
+function fortran(){
 curname=$1
 bname=$(fname "$1")
 shift
