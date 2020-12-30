@@ -5,6 +5,8 @@ alias disktree='ncdu'
 alias imgview='feh -FZzr '
 alias edit='featherpad'
 alias temps='sensors'
+alias ..='cd ..'
+
 alias stack="sudo perf top "
 alias trace='strace -C -S time '
 alias vars='printenv'
