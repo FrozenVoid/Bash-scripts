@@ -7,7 +7,7 @@ alias webreadq="sed 's/<span xml:base[^>]*>/\n\n\n/g' | sed 's/<[^a][^>]*>/ /g '
 alias webload='wget -O - -o /dev/null '
 function ytrnd(){
 #https://github.com/FrozenVoid/C-techniques/blob/master/rng/rnduri.c
-echo "https://www.youtube.com/watch?v="$(webload "https://www.youtube.com/results?search_query=$(rnduri)&search=Search"|egrep --max-count=1 -o 'videoId\":\"[^\"]+'|tail -1|sed 's/videoId...//g')
+echo "https://www.youtube.com/watch?v="$(webload "https://www.youtube.com/results?search_query=$(rnduri)&search=Search"|egrep -o 'videoId\":\"[^\"]+'|tail -1|sed 's/videoId...//g')
 }
 
 alias youall='youtube-dl   --no-call-home '
