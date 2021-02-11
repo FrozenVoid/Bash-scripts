@@ -32,6 +32,10 @@ webload "https://m.youtube.com/results?search_query=$queryyt" | webread
 }
 function wvideo(){
 
- youtube-dl --no-call-home -f 'best[height<=480]' "$1"  -o /tmp/
+ youtube-dl --no-call-home -f 'best[height<=480]' "$1"
+}
+function wrndvideo(){
+
+ youtube-dl --no-call-home -f 'best[height<=480]' "$(ytrnd)"
 }
 alias news='w https://mobile.reuters.com/'
