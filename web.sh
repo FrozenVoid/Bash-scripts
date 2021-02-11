@@ -1,10 +1,15 @@
 #web scripts
 #add with . ~/Scripts/web.sh
-alias webread="sed 's/<[^a][^>]*>/ /g ; /^$/d' |  sed 's/  */ /g' |sed 's/&nbsp/ /g' |fmt --width=$(tput cols) | less " 
+alias webread="sed 's/<[^a][^>]*>/ /g ; /^$/d' |  sed 's/  */ /g' |sed 's/&nbsp/ /g' |fmt --width=$(tput cols) | less "
 alias webtags="sed 's@<\([^<>][^<>]*\)>\([^<>]*\)</\1>@\2@g'"
 alias webstrip="sed -e 's/<[script|style][^>]*>//g'  |less"
-alias webreadq="sed 's/<span xml:base[^>]*>/\n\n\n/g' | sed 's/<[^a][^>]*>/ /g ' | sed 's/&nbsp/ /g' |  less " 
+alias webreadq="sed 's/<span xml:base[^>]*>/\n\n\n/g' | sed 's/<[^a][^>]*>/ /g ' | sed 's/&nbsp/ /g' |  less "
 alias webload='wget -O - -o /dev/null '
+function ytrnd(){
+#https://github.com/FrozenVoid/C-techniques/blob/master/rng/rnduri.c
+echo "https://www.youtube.com/watch?v="$(webload "https://www.youtube.com/results?search_query=$(rnduri)&search=Search"|egrep --max-count=1 -o 'videoId\":\"[^\"]+'|tail -1|sed 's/videoId...//g')
+}
+
 alias youall='youtube-dl   --no-call-home '
 alias youvid='youtube-dl  --no-call-home -f bestvideo'
 alias youaud='youtube-dl  --no-call-home -f bestaudio '
@@ -30,4 +35,3 @@ function wvideo(){
  youtube-dl --no-call-home -f 'best[height<=480]' "$1"  -o /tmp/
 }
 alias news='w https://mobile.reuters.com/'
-
