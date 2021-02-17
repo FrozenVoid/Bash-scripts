@@ -2,6 +2,7 @@ alias dir='ls -ABgtr  --color=always --group-directories-first --dereference-com
 alias net='sudo watch ss -tonp'
 alias netstat='ss'
 alias disktree='ncdu'
+alias diskuse='df -H'
 alias imgview='feh -FZzr '
 alias edit='featherpad'
 alias temps='sensors'
