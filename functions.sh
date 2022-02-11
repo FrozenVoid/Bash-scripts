@@ -46,8 +46,17 @@ function c(){
 curname=$1
 bname=$(fname "$1")
 shift
-gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  $curname -o$bname $*
+#gcc -Ofast -march=native -mtune=native  -pipe -Wall -fno-exceptions  -fwhole-program -fwrapv -fno-trapping-math -Wno-unused  $curname -o$bname $*
+gcc -O2 -gdwarf-3 -mtune=native -fwhole-program -ffast-math -onqc -v -fwrapv -fno-trapping-math -pipe -Wall -fno-exceptions  -Wno-unused $curname -o$bname $*
 }
+
+function ada(){
+curname=$1
+bname=$(fname "$1")
+shift
+gcc -O3 -S -march=native -mtune=native  -pipe -Wall   -fwhole-program -fno-trapping-math -Wno-unused  $curname -o$bname $*
+}
+
 
 
 function fortran(){
